@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Soccer Field Diagram Demo</title>
+       
+        <link rel="stylesheet" type="text/css" href="css/soccerfield.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/soccerfield.default.min.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+        <script src="js/jquery.soccerfield.min.js"></script>
+        <script type="text/javascript">
+            //Soccer players data. Could be set as a variable or loaded from server
+            <!-- var data = [ -->
+                <!-- {name: 'KEYLOR NAVAS', position: 'C_GK'}, -->
+                <!-- {name: 'MARCELO', position: 'LC_B'}, -->
+                <!-- {name: 'SERGIO RAMOS', position: 'C_B'}, -->
+                <!-- {name: 'CARVAJAL', position: 'RC_B'}, -->
+                <!-- {name: 'CASEMIRO', position: 'C_DM'}, -->
+                <!-- {name: 'KROOS', position: 'L_M'}, -->
+                <!-- {name: 'ISCO', position: 'LC_M'}, -->
+                <!-- {name: 'ASENSIO', position: 'RC_M'}, -->
+                <!-- {name: 'MODRIC', position: 'R_M'}, -->
+                <!-- {name: 'RONALDO', position: 'LC_F'}, -->
+                <!-- {name: 'BENZEMA', position: 'RC_F'}, -->
+            <!-- ]; -->
+			var data = [
+                {name: 'KEYLOR NAVAS', position: 'C_GK'},
+                {name: 'MARCELO', position: 'L_B'},
+                {name: 'SERGIO RAMOS', position: 'LC_B'},
+                {name: 'CARVAJAL', position: 'RC_B'},
+				{name: 'CARVAJAL', position: 'R_B'},
+                {name: 'CASEMIRO', position: 'C_DM'},
+                {name: 'KROOS', position: 'L_M'},
+                {name: 'ISCO', position: 'LC_M'},
+                {name: 'ASENSIO', position: 'RC_M'},
+                {name: 'MODRIC', position: 'R_M'},
+                {name: 'RONALDO', position: 'LC_F'},
+                {name: 'BENZEMA', position: 'RC_F'},
+            ];
+            $(document).ready(function () {
+                var options =  {
+            field: {
+                width: "960px",
+                height: "600px",
+                img: 'img/soccerfield_green.png',
+                startHidden: true,
+                animate: true,
+                fadeTime: 1000,
+                autoReveal:true,
+                onReveal: function () {
+
+                }
+            },
+            players: {
+                font_size: 12,
+                reveal: true,
+                sim: false,
+                timeout: 1000,
+                fadeTime: 2000,
+                img: 'img/soccer-player.png',
+                onReveal: function () {
+                    alert("players revealed!");
+                }
+            }
+        };
+        $("#soccerfield").soccerfield(data,options);
+            });
+        </script>
+       
+    </head>
+
+    <body>
+        
+	<div id="soccerfield">
+
+	</div>
+  </body>
+</html>
